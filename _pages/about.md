@@ -12,7 +12,7 @@ I'm a third year undergraduate student from [Sun Yat-sen University](https://www
 
 I am very fortunate to be advised by [Prof. Peng](http://zhenhuipeng.com/) of HCI Lab from [School of Artificial Intelligence](https://sai.sysu.edu.cn/), Sun Yat-sen University. 
 
-You can find my CV here: [Curriculum Vitae](../assets/Curriculum_Vitae.pdf) [简历](../assets/曹诗磊-中山大学-个人简历.pdf).
+You can find my CV here: [Curriculum Vitae](../assets/Curriculum Vitae.pdf) [简历](../assets/曹诗磊-中山大学-个人简历.pdf).
 
 [Email](j799017232@gmail.com) / [Wechat](../images/wechat.jpg) / 
 

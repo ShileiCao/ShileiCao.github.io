@@ -12,5 +12,5 @@ I'm a third year undergraduate student from [Sun Yat-sen University](https://www
  
 You can find my CV here: [CV (English)](../assets/Curriculum_Vitae.pdf), [CV (Chinese)](../assets/曹诗磊-中山大学-个人简历.pdf).
 
-Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/wechat.jpg) 
+Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/weChat.jpg) 
 

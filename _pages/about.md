@@ -19,6 +19,6 @@ Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/
 Under Review Manuscripts
 ===
 
-- Anonymous Authors (**as Co-First Author**). 2023. Designing a training tool for critical paper reading (Title modified to ensure blind review). In UIST '23. Conditionally Accepted.
+- Anonymous Authors (**as Co-First Author**). 2023. Designing a training tool for critical paper reading (Title modified to ensure blind review). In UIST '23. **Conditionally Accepted**.
 
 

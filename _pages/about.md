@@ -16,9 +16,7 @@ Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/
 
 ---
 
-Publications
-===
-
-- Kangyu Yuan*, Hehai Lin*, **Shilei Cao***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma. 2023. CriTrainer: An Adaptive Training Tool for Critical Paper Reading. (UIST '23). [PDF].
+# Publications
+- Kangyu Yuan*, Hehai Lin*, **Shilei Cao***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma. 2023. CriTrainer: An Adaptive Training Tool for Critical Paper Reading. UIST'23. (*equal contribution) [PDF](../assets/uist2023.pdf) | HTML(To appear).
 
 

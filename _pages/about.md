@@ -16,9 +16,9 @@ Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/
 
 ---
 
-Under Review Manuscripts
+Publications
 ===
 
-- Anonymous Authors (**as Co-First Author**). 2023. Designing a training tool for critical paper reading (Title modified to ensure blind review). In UIST '23. **Conditionally Accepted**.
+- Kangyu Yuan*, Hehai Lin*, **Shilei Cao***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma. 2023. CriTrainer: An Adaptive Training Tool for Critical Paper Reading. (UIST '23). [PDF].
 
 

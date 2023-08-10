@@ -19,8 +19,7 @@ Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/
 Publications
 ===
 
-1. [CriTrainer: An Adaptive Training Tool for Critical Paper Reading](../assets/uist2023.pdf) <br>
-   Kangyu Yuan\*, Hehai Lin\*, **Shilei Cao\***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma (\*equal contribution) <br>
-   ACM Symposium on User Interface Software and Technology (UIST), 2023 (**CCF-A**)
+1. Kangyu Yuan\*, Hehai Lin\*, **Shilei Cao\***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma. [CriTrainer: An Adaptive Training Tool for Critical Paper Reading](../assets/uist2023.pdf). 
+   UIST (**CCF-A**), 2023. (\*equal contribution)
 
 

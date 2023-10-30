@@ -26,7 +26,7 @@ Publications
 
 \* indicates equal contribution
 
-1. Kangyu Yuan\*, Hehai Lin\*, **Shilei Cao\***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma. [CriTrainer: An Adaptive Training Tool for Critical Paper Reading](../assets/uist2023.pdf). 
+1. Kangyu Yuan\*, Hehai Lin\*, **Shilei Cao\***, Zhenhui Peng, Qingyu Guo, and Xiaojuan Ma. [CriTrainer: An Adaptive Training Tool for Critical Paper Reading](https://doi.org/10.1145/3586183.3606816). 
    UIST (**CCF-A**), 2023.
 
 

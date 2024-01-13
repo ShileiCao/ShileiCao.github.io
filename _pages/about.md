@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a fourth-year undergraduate student from [Sun Yat-sen University](https://www.sysu.edu.cn/) with a major in Artificial Intelligence. I am very fortunate to be advised by [Prof. Peng](http://zhenhuipeng.com/) and [Prof. Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa). My research interest includes Computer Vision and the intersection of Artificial Intelligence and Human-Computer Interaction.
+I'm a fourth-year undergraduate student from [Sun Yat-sen University](https://www.sysu.edu.cn/) with a major in Artificial Intelligence. During my undergraduate studies, I am very fortunate to be advised by both [Prof. Peng](http://zhenhuipeng.com/) and [Prof. Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa). My research interest includes Computer Vision and the intersection of Artificial Intelligence and Human-Computer Interaction.
  
 You can find my [CV](../assets/ShileiCao_CV.pdf) here.
 

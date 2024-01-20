@@ -21,7 +21,7 @@ Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/
 
 News
 ===
-- Aug 3, 2023: One paper about AI-powered learning systems is accepted by [UIST 2023](https://uist.acm.org/2023/). Thanks to co-authors in our department and HKUST.
+- **Aug 3, 2023:** One paper about AI-powered learning systems is accepted by [UIST 2023](https://uist.acm.org/2023/). Thanks to co-authors in our department and HKUST.
 
 
 Publications

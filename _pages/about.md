@@ -21,9 +21,9 @@ Email: [j799017232@gmail.com](mailto:j799017232@gmail.com) / [Wechat](../images/
 
 News
 ===
-- **Mar. 8, 2024:** Start the exchange study in the [High-Performance Geo-Computing Research Group](http://www.thuhpgc.net/mediawiki/index.php/Main_Page), **Tsinghua University**.
+- **Mar. 8, 2024:** Start the **exchange study** in the [High-Performance Geo-Computing Research Group](http://www.thuhpgc.net/mediawiki/index.php/Main_Page), **Tsinghua University**.
 
-- **Aug. 3, 2023:** One paper about AI-powered learning systems is accepted by [UIST 2023](https://uist.acm.org/2023/). Thanks to co-authors in our department and **HKUST**.
+- **Aug. 3, 2023:** One paper about **AI-powered learning systems** is **accepted** by [UIST 2023](https://uist.acm.org/2023/). Thanks to co-authors in our department and **HKUST**.
 
 Publications
 ===

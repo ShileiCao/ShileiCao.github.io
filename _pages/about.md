@@ -10,6 +10,7 @@ redirect_from:
 
 I'm a fourth-year undergraduate student from [Sun Yat-sen University](https://www.sysu.edu.cn/) with a major in Artificial Intelligence. During my undergraduate studies, I am very fortunate to be advised by both [Prof. Peng](http://zhenhuipeng.com/) and [Prof. Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa). My current research interest includes:
 - Domain Adaptation for Vision Models
+- AI for Science
 
  
 You can find my [CV](../assets/ShileiCao_CV.pdf) here.

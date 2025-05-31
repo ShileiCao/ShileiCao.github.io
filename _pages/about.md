@@ -60,7 +60,7 @@ AAAI Conference on Artificial Intelligence
 4. Haoyuan Liang\*,  **Shilei Cao\***, Yushan Lai, Juepeng Zheng#.
 Federated Open-Set Domain Generalization with Adaptive Adjustment Boundary and Weights.
 IEEE International Conference on Multimedia & Expo 
-(ICME, 2025), **CCF-B**. (to appear)
+(ICME, 2025), Oral Presentation, **CCF-B**. (to appear)
 
 ---
 

@@ -55,7 +55,7 @@ The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR, 2026),
 
 [5] **Shilei Cao\***, Hehai Lin\*, Jiashun Cheng, Yang Liu, Guowen Li, Xuehe Wang, Juepeng Zheng#, Haoyuan Liang, Meng Jin, Chengwei Qin, Hong Cheng, Haohuan Fu.
 [Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](https://openreview.net/forum?id=eFExhM3tKr).
-The Fourteenth International Conference on Learning Representations (ICLR, 2026).
+The Fourteenth International Conference on Learning Representations (ICLR, 2026), **CCF-A**.
 
 [4]  Haoyuan Liang\*,  **Shilei Cao\***, Guowen Li, Zhiyu Ye, Haohuan Fu, Juepeng Zheng#.
 [SPFL: Sequential Updates with Parallel Aggregation for Enhanced Federated Learning Under Category and Domain Shifts](https://openreview.net/forum?id=IHZngJNasX).
@@ -79,7 +79,7 @@ IEEE Transactions on Geoscience and Remote Sensing (TGRS, 2026), **中科院1区
 
 [3] Guowen Li, Xintong Liu, Yang Liu, Mengxuan Chen, **Shilei Cao**, Xuehe Wang, Juepeng Zheng, Jinxiao Zhang, Haoyuan Liang, Lixian Zhang, Jiuke Wang, Meng Jin, Hong Cheng, Haohuan Fu. 
 [TianQuan-S2S: A Subseasonal-to-Seasonal Global Weather Model via Incorporate Climatology State](https://openreview.net/forum?id=7Dvmq7MhwU).
-The Fourteenth International Conference on Learning Representations (ICLR, 2026).
+The Fourteenth International Conference on Learning Representations (ICLR, 2026), **CCF-A**.
 
 [2] Zhiyu Ye, Guowen Li, Haoyuan Liang, Zixi Wang, **Shilei Cao**, Yushan Lai, Juepeng Zheng#.
 [Quantifying Samples with Invariance for Source-Free Class Incremental Domain Adaptation](https://dl.acm.org/doi/abs/10.1145/3746027.3755053).

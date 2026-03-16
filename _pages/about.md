@@ -20,8 +20,6 @@ I'm a second-year master student from [IGCS Lab](https://rssysu.github.io/) of [
    - **Weather and Climate**: WeatherPEFT <small style="color:#B4CDCD">(ICLR '26)</small>, ResCast <small style="color:#B4CDCD">(under review)</small>, TianQuan-Climate <small style="color:#B4CDCD">(ICLR '26)</small>.
    - **Remote Sensing**: [$A^2$-MAE](https://arxiv.org/abs/2406.08079) <small style="color:#B4CDCD">(TGRS)</small>,  LSCD-TTA <small style="color:#B4CDCD">(JAG '25)</small>, CrossEarth-Gate <small style="color:#B4CDCD">(CVPR '26)</small>.
  
-You can find my [CV](../assets/ShileiCao_CV.pdf) here.
-
 Email: [caoshlei@mail2.sysu.edu.cn](mailto:caoshlei@mail2.sysu.edu.cn) and [j799017232@gmail.com](mailto:j799017232@gmail.com)
 
 ---

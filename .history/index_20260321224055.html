@@ -45,24 +45,45 @@
     .sidebar {
       width: 270px !important;    /* 保险起见再加个 width */
     }
-    .pub-img-container[data-astro-cid-oqb7pjrz] {
-        flex: 0 0 35% !important; /* 原本可能只有 20% 多，现在分配 35% 的空间给图片 */
-        max-width: 35% !important; /* 确保它不会因为内容过大而撑破自己的格子 */
-    }
+    /* 1. 强制扩大图片容器的宽度 */
+/* --- 彻底解决图片文字重合补丁 --- */
 
-    /* 2. 让图片自身自动填充这个 35% 的格子，并保持比例不被切掉 */
-    .pub-thumb[data-astro-cid-oqb7pjrz] {
-        width: 100% !important; 
-        height: auto !important; 
-        max-height: none !important; /* 解除模板可能自带的高度限制 */
-        object-fit: contain !important; /* 保持图片完整 */
-    }
+/* 1. 确保父级容器是一个干净的横向伸缩盒 */
+.pub-item[data-astro-cid-oqb7pjrz] {
+    display: flex !important;
+    flex-direction: row !important; /* 强制左右排列 */
+    flex-wrap: nowrap !important;  /* 禁止换行以免重叠 */
+    align-items: flex-start !important;
+    position: relative !important;
+    gap: 30px !important;           /* 图片和文字之间的物理间距 */
+    width: 100% !important;
+}
 
-    /* 3. 让文字部分自动占满剩下 65% 的格子，并防止重叠 */
-    .pub-body[data-astro-cid-oqb7pjrz] {
-        flex: 1 1 60% !important; 
-        min-width: 0 !important; /* 这是一个防挤压的魔法属性，确保文字过长时会自动换行而不是浮在图片上 */
-    }
+/* 2. 重新设定图片容器占比，并清除定位冲突 */
+.pub-img-container[data-astro-cid-oqb7pjrz] {
+    flex: 0 0 40% !important;       /* 图片占 40% */
+    width: 40% !important;
+    max-width: none !important;
+    position: static !important;    /* 强制改为静态定位，防止绝对定位导致的重叠 */
+    margin: 0 !important;           /* 清除可能存在的负边距 */
+}
+
+/* 3. 强制图片自适应填充容器 */
+.pub-thumb[data-astro-cid-oqb7pjrz] {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+}
+
+/* 4. 强制文字内容占据剩余空间，绝不重叠 */
+.pub-body[data-astro-cid-oqb7pjrz] {
+    flex: 1 !important;             /* 占据剩下的 60% */
+    min-width: 0 !important;        /* 关键：允许内容在 flex 容器中正常收缩 */
+    position: static !important;    /* 防止文字浮动到图片上 */
+    margin: 0 !important;
+    text-align: left !important;    /* 保持文字向左对齐 */
+}
 
 
   </style>

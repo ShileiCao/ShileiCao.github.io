@@ -277,6 +277,13 @@
         /* 顺便把整个网页的最大宽度调宽一点，防止右侧被挤得太窄（原版是 1200px） */
         max-width: 1300px !important; 
     }
+
+    /* 3. 手机端适配：屏幕变窄时，取消左右分栏，改成上下排列 */
+    @media(max-width: 900px) {
+        .container {
+            grid-template-columns: 1fr !important;
+        }
+    }
 </style>
 <body> 
 <main class="home"> 

@@ -261,7 +261,20 @@
     display: inline-block;
     object-fit: contain;
     }
+    
+    .container {
+      max-width: 1600px !important; /* 你可以根据需要调大，比如 1500px */
+      gap: 60px !important;
+    }
+    /* 2. 调整右侧内容区的宽度 (原版变量是 850px) */
+    :root {
+      --rh-max-content: 1100px !important; /* 从 850px 增加到 1000px */
+    }
+    .sidebar {
+      width: 270px !important;    /* 保险起见再加个 width */
+    }
 </style>
+
 <link rel="stylesheet" href="/_astro/_slug_.D0YuvnXN.css">
 </head> 
 <body> 

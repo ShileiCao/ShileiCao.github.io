@@ -301,13 +301,22 @@
         font-size: 0.85rem !important; /* 比正文的 0.9rem 稍微小一点点，保持层次感 */
     }
 
-    .pub-title[data-astro-cid-oqb7pjrz]::before {
-        content: "[" attr(data-num) "] ";  /* 直接读取 JS 算好的倒序数字 */
-        color: #6247b0;
-        font-weight: 900;
-        margin-right: 6px;
+    [data-publist] {
+        counter-reset: paper-counter; 
     }
 
+    /* 2. 告诉浏览器：每次遇到一个论文条目 (.pub-item)，就把计数器 +1 */
+    .pub-item[data-astro-cid-oqb7pjrz] {
+        counter-increment: paper-counter;
+    }
+
+    /* 3. 在论文标题 (.pub-title) 的最前面，把当前数字打印出来 */
+    .pub-title[data-astro-cid-oqb7pjrz]::before {
+        content: "[" counter(paper-counter) "] ";
+        color: #6247b0;      /* 用了你网页里的主题紫色，让序号看起来专业且有层次 */
+        font-weight: 900;    /* 加粗数字 */
+        margin-right: 6px;   /* 和后面的论文名字留出一点呼吸空间 */
+    }
 
     @media (max-width: 900px) {
             /* 1. 让左侧侧边栏和右侧内容区上下堆叠 */
@@ -889,23 +898,6 @@
 </section>
 <script>
   window.addEventListener("DOMContentLoaded", () => {
-
-    const lists = document.querySelectorAll(".pub-list");
-    lists.forEach(list => {
-      const items = list.querySelectorAll(".pub-item");
-      let count = items.length; // 自动获取当前这组列表的总篇数
-      
-      items.forEach(item => {
-        const title = item.querySelector(".pub-title");
-        if (title) {
-          // 给标题偷偷打上序号标签，供 CSS 的 attr(data-num) 读取
-          title.setAttribute("data-num", count); 
-        }
-        item.setAttribute("data-paper-id", count); // 给整个条目也留个记录，方便排查
-        count--; // 每数完一篇，数字减 1，实现倒序！
-      });
-    });
-    
     const roots = document.querySelectorAll("[data-publist]");
     roots.forEach((root) => {
       const container = root.querySelector("[data-tag-filters]");

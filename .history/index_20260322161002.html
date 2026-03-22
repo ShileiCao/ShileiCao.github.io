@@ -497,8 +497,6 @@
     <!-- <button type="button" class="tag-btn" data-tag="LLM" data-astro-cid-oqb7pjrz> LLM </button>  -->
   </div> 
 
-
-  <h3 class="rh-h3" style="font-size: 18px; margin-top: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 0.5rem;">First / Co-First Author</h3>
   <ul class="pub-list" data-pub-list data-astro-cid-oqb7pjrz> 
 
     <li class="pub-item" data-tags="PEFT,Earth Science,Domain Adaptation" data-astro-cid-oqb7pjrz> 
@@ -738,11 +736,7 @@
 
       </div> 
     </li>
-    </ul>
 
-
-    <h3 class="rh-h3" style="font-size: 18px; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 0.5rem;">Co-Author</h3>
-    <ul class="pub-list" data-astro-cid-oqb7pjrz>
     <li class="pub-item" data-tags="Earth Science" data-astro-cid-oqb7pjrz> 
       <img class="pub-thumb" src="/papers/a2mae.png" alt="A2-MAE thumbnail" loading="lazy" data-astro-cid-oqb7pjrz> 
       <div class="pub-body" data-astro-cid-oqb7pjrz> 
@@ -882,13 +876,11 @@
     const roots = document.querySelectorAll("[data-publist]");
     roots.forEach((root) => {
       const container = root.querySelector("[data-tag-filters]");
-      
-      const items = Array.from(root.querySelectorAll("li[data-tags]"));
-      if (!container || items.length === 0) return;
-
+      const list = root.querySelector("[data-pub-list]");
+      if (!container || !list) return;
 
       const buttons = Array.from(container.querySelectorAll("button.tag-btn"));
-
+      const items = Array.from(list.querySelectorAll("li[data-tags]"));
 
       function setActive(tag) {
         buttons.forEach((b) =>

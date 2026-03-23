@@ -2,7 +2,7 @@ name: Update Google Scholar Citations
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # 每天 UTC 时间 0 点（北京时间早上 8 点）自动运行一次
+    - cron: '0 0 * * *' # 每天 UTC 时间 0 点（北京时间早上 8 点）自动运行一次
   workflow_dispatch: # 允许手动点击运行
 
 jobs:

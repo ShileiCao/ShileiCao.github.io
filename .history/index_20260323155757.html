@@ -307,32 +307,6 @@
         color: #6247b0;
         font-weight: 900;
     }
-    .citation-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 3px 12px;
-        border: 1px solid #3b6bb4; /* 截图里经典的学术蓝色边框 */
-        border-radius: 999px;      /* 胶囊圆角 */
-        background-color: #fff;
-        font-size: 14.5px;
-        color: #333;               /* "citations" 文本的深灰色 */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.04); /* 截图里自带的一点微弱阴影 */
-        text-decoration: none;     /* 去掉链接下划线 */
-        transition: all 0.2s ease; /* 增加鼠标悬停的平滑动画 */
-    }
-    
-    .citation-badge:hover {
-        transform: translateY(-1px); /* 鼠标放上去微微上浮 */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    }
-
-    /* 专门控制数字的颜色和加粗 */
-    #citation-count {
-        color: #6247b0; 
-        font-weight: 700;
-        font-size: 15.5px;
-    }
 
     @media (max-width: 900px) {
             /* 1. 让左侧侧边栏和右侧内容区上下堆叠 */
@@ -535,19 +509,12 @@
 <hr class="custom-dashed-line">
 
 <!-- Publications section header --> 
-<section class="home-section"> 
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
-        <h2 class="rh-h2" style="margin-bottom: 0;">Publications</h2> 
-        
-        <a href="https://scholar.google.com/citations?user=-bCjtakAAAAJ" target="_blank" rel="noopener noreferrer" class="citation-badge">
-            📊 <span id="citation-count">--</span> citations
-        </a>
-    </div>
-
+ <section class="home-section"> 
+    <h2 class="rh-h2">Publications</h2> 
     <p style="font-size: 14px; color: rgba(0, 0, 0, 0.6); margin-top: 0; margin-bottom: 15px;">
     <strong>*</strong> indicates equal contribution, <strong>#</strong> represents corresponding author.
     </p>
-</section>
+</section> 
 <section data-publist data-astro-cid-oqb7pjrz>  
   
   <div class="tag-filters" data-tag-filters data-astro-cid-oqb7pjrz> 
@@ -1018,19 +985,6 @@
         window.addEventListener('DOMContentLoaded', () => {
           document.querySelectorAll('[data-scrollhint]').forEach(bindScrollHint);
         });
-
-        fetch('/citations.json')
-          .then(response => response.json())
-          .then(data => {
-            if(data && data.citations) {
-              document.getElementById('citation-count').innerText = data.citations;
-            }
-          })
-          .catch(err => {
-            console.log("暂时没有找到引用量数据，可能是还没有自动抓取", err);
-            document.getElementById('citation-count').innerText = "--";
-          });
-
       </script> 
 <div style="width: 400px; height: 400px; margin: 0 auto;">
 <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=pQ1u8_yavKDHrIZllZ6ibhgx23noedhyOSb5SSosVqs"></script>

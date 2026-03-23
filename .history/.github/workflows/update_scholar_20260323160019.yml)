@@ -1,0 +1,30 @@
+name: Update Google Scholar Citations
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 时间 0 点（北京时间早上 8 点）自动运行一次
+  workflow_dispatch: # 允许你在 GitHub 网页上手动点击运行按钮
+
+jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run fetch script
+        run: python fetch_scholar.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add */citations.json citations.json || true
+          # 如果引用量变了，就自动提交更新；如果没变，就什么都不做
+          git commit -m "Auto-update citations count" || exit 0
+          git push

@@ -1018,19 +1018,6 @@
         window.addEventListener('DOMContentLoaded', () => {
           document.querySelectorAll('[data-scrollhint]').forEach(bindScrollHint);
         });
-
-        fetch('/citations.json')
-          .then(response => response.json())
-          .then(data => {
-            if(data && data.citations) {
-              document.getElementById('citation-count').innerText = data.citations;
-            }
-          })
-          .catch(err => {
-            console.log("暂时没有找到引用量数据，可能是还没有自动抓取", err);
-            document.getElementById('citation-count').innerText = "--";
-          });
-
       </script> 
 <div style="width: 400px; height: 400px; margin: 0 auto;">
 <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=pQ1u8_yavKDHrIZllZ6ibhgx23noedhyOSb5SSosVqs"></script>

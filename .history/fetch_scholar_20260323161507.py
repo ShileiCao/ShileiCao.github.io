@@ -23,7 +23,7 @@ try:
         # 如果你是用 Astro 等框架，建议存入 public 文件夹；如果是纯静态单页，存根目录即可
         if not os.path.exists("public"):
                     os.makedirs("public")
-        out_file = "public/citations.json"
+                out_file = "public/citations.json"
 
         # 将数字写入 JSON 文件
         with open(out_file, 'w') as f:

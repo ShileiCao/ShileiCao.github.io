@@ -8,7 +8,7 @@ author_id = "-bCjtakAAAAJ"
 api_key = os.environ.get("SERPAPI_KEY")
 
 if not api_key:
-    print("错误: 找不到 SERPAPI_KEY 请检查 GitHub Secrets 设置！")
+    print("错误: 找不到 SERPAPI_KEY，请检查 GitHub Secrets 设置！")
     exit(1)
 
 # 构建 SerpApi 的请求链接

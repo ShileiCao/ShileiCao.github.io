@@ -1016,28 +1016,22 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[data-scrollhint]').forEach(bindScrollHint);
+          document.querySelectorAll('[data-scrollhint]').forEach(bindScrollHint);
+        });
 
-        // 🌟 升级 1：加上时间戳后缀，强行打破浏览器缓存，保证每次都去拿最新数字！
-        const fetchUrl = '/citations.json?t=' + new Date().getTime();
-
-        // 🌟 升级 2：把抓取代码放进 DOMContentLoaded 里，确保网页元素完全加载后再填入数字
-        fetch(fetchUrl)
-          .then(response => {
-            if (!response.ok) throw new Error("JSON file not found");
-            return response.json();
-          })
+        fetch('/citations.json')
+          .then(response => response.json())
           .then(data => {
             if(data && data.citations) {
               document.getElementById('citation-count').innerText = data.citations;
             }
           })
           .catch(err => {
-            console.log("暂时没有找到引用量数据，可能还在打包中...", err);
+            console.log("暂时没有找到引用量数据，可能是还没有自动抓取", err);
+            document.getElementById('citation-count').innerText = "--";
           });
-      });
 
-</script> 
+      </script> 
 <div style="width: 400px; height: 400px; margin: 0 auto;">
 <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=pQ1u8_yavKDHrIZllZ6ibhgx23noedhyOSb5SSosVqs"></script>
 </div>  

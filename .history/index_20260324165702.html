@@ -339,7 +339,7 @@
         width: 100%;
         height: 100%;
         display: block; /* 确保容器和图片一样大 */
-
+        
         /* 🎨 魔法在这里：去掉边框，加上柔和的阴影 */
         border: none !important;            /* 👈 强制去掉四周的细线 */
         background-color: #ffffff;          /* 👈 给容器加白色底色，防止 containment 图片漏底 */
@@ -351,12 +351,6 @@
         
         overflow: hidden;                   /* 👈 确保里面的图片裁剪出和容器一样的圆角 */
         transition: transform 0.2s ease;   /* 增加鼠标悬停的平滑动画 */
-    }
-
-    .pub-thumb-container[data-astro-cid-oqb7pjrz]:hover {
-        transform: translateY(-2px);        /* 鼠标放上去微微上浮 */
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), /* 阴影也随之变深 */
-                    0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     /* 2. 角标的样式 */

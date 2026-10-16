@@ -299,6 +299,118 @@
         color: rgba(0, 0, 0, 0.6) !important;
     }
 
+    .education-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .education-item {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        align-items: center;
+        column-gap: 18px;
+        padding: 15px 0;
+    }
+
+    .education-item + .education-item {
+        border-top: 1px solid rgba(96, 115, 159, 0.12);
+    }
+
+    .education-logo {
+        display: block;
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        border-radius: 0;
+    }
+
+    .education-details {
+        min-width: 0;
+    }
+
+    .education-school {
+        margin: 0;
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .education-school a {
+        color: #331d71;
+    }
+
+    .education-school a:hover {
+        color: #6247b0;
+    }
+
+    .education-school a:focus-visible {
+        outline: 2px solid #6247b0;
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+
+    .education-degree {
+        margin: 4px 0 0;
+        color: var(--rh-text);
+        font-size: var(--rh-body);
+        line-height: 1.5;
+    }
+
+    .education-period {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        color: var(--rh-muted);
+        font-size: 0.82rem;
+        line-height: 1.4;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .education-status {
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: #f2eefe;
+        color: #6247b0;
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 1100px) {
+        .education-item {
+            grid-template-columns: 56px minmax(0, 1fr);
+            row-gap: 7px;
+        }
+
+        .education-logo {
+            grid-row: span 2;
+        }
+
+        .education-period {
+            grid-column: 2;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            white-space: normal;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .education-item {
+            grid-template-columns: 46px minmax(0, 1fr);
+            column-gap: 13px;
+            padding: 14px 0;
+        }
+
+        .education-logo {
+            width: 46px;
+            height: 46px;
+        }
+    }
+
     /* 3. 奖项里的灰色备注字 (比如奖金 ￥50,000) */
     .flat-main .muted {
         font-size: 0.85rem !important; /* 比正文的 0.9rem 稍微小一点点，保持层次感 */
@@ -548,31 +660,42 @@ I will be joining the <a href="https://www.thuhpgc.net/" target="_blank" rel="no
 
 <hr class="custom-dashed-line">
 
-<section class="home-section"> 
-  <h2 class="rh-h2">Education</h2> 
-  <div class="flat-list"> 
-    
-  <div class="flat-row"> 
-      <span class="flat-period">2027 – 2031 (Expected)</span> 
-      <div class="flat-main"> 
-        <div> Ph.D. in Computer Science and Technology, <a href="https://www.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer"> Tsinghua University </a> </div>
+<section class="home-section education-section" aria-labelledby="education-heading">
+  <h2 class="rh-h2" id="education-heading">Education</h2>
+  <ul class="education-list">
+    <li class="education-item">
+      <img class="education-logo" src="/icons/tsinghua.svg" alt="" width="56" height="56">
+      <div class="education-details">
+        <h3 class="education-school"><a href="https://www.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">Tsinghua University</a></h3>
+        <p class="education-degree">Ph.D. in Computer Science and Technology</p>
       </div>
-    
-    <div class="flat-row"> 
-      <span class="flat-period">2024 – 2027 (Expected)</span> 
-      <div class="flat-main"> 
-        <div> M.Eng. in Computer Science and Technology, <a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer"> Sun Yat-sen University </a> </div>
-      </div> 
-    </div>
-
-    <div class="flat-row"> 
-      <span class="flat-period">2020 – 2024</span> 
-      <div class="flat-main"> 
-        <div> B.Eng. in Artificial Intelligence, <a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer"> Sun Yat-sen University </a> </div>
-      </div> 
-    </div>
-
-  </div> 
+      <div class="education-period">
+        <span>2027 – 2031</span>
+        <span class="education-status">Expected</span>
+      </div>
+    </li>
+    <li class="education-item">
+      <img class="education-logo" src="/icons/sysu.png" alt="" width="56" height="56">
+      <div class="education-details">
+        <h3 class="education-school"><a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer">Sun Yat-sen University</a></h3>
+        <p class="education-degree">M.Eng. in Computer Science and Technology</p>
+      </div>
+      <div class="education-period">
+        <span>2024 – 2027</span>
+        <span class="education-status">Expected</span>
+      </div>
+    </li>
+    <li class="education-item">
+      <img class="education-logo" src="/icons/sysu.png" alt="" width="56" height="56">
+      <div class="education-details">
+        <h3 class="education-school"><a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer">Sun Yat-sen University</a></h3>
+        <p class="education-degree">B.Eng. in Artificial Intelligence</p>
+      </div>
+      <div class="education-period">
+        <span>2020 – 2024</span>
+      </div>
+    </li>
+  </ul>
 </section>
 
 <hr class="custom-dashed-line">

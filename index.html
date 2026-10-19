@@ -101,12 +101,13 @@
     /* 论文配图 */
     .pub-thumb[data-astro-cid-oqb7pjrz] {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 0;
     display: block;
 
     border: none !important;            /* 👈 强制去掉图片自己的边框 */
     object-fit: contain !important;     /* 保持图片比例 */
+    object-position: center top;
     background: transparent;            /* 图片本身不需要底色了 */
 
     border-radius: 2px;
@@ -451,7 +452,7 @@
     .pub-thumb-container[data-astro-cid-oqb7pjrz] {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: auto;
         display: block; /* 确保容器和图片一样大 */
 
         /* 🎨 魔法在这里：去掉边框，加上柔和的阴影 */
@@ -490,6 +491,22 @@
         z-index: 10;             /* 保证它浮在图片最上层 */
         box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* 加一点阴影更有立体感 */
         letter-spacing: 0.5px;
+    }
+
+    @media (min-width: 901px) {
+        /* 由右侧文字决定行高，左侧图片区域同步拉伸 */
+        .pub-thumb-container[data-astro-cid-oqb7pjrz] {
+            align-self: stretch;
+            min-height: 0;
+        }
+
+        .pub-thumb[data-astro-cid-oqb7pjrz] {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+        }
     }
 
     @media (max-width: 900px) {

@@ -83,7 +83,7 @@
     grid-template-columns: 300px 1fr; /* 左侧图片200px，右侧文字占满剩余空间 */
     gap: 18px;           /* 左右内容间距 */
     margin: 30px 0;      /* 上下条目间距 */
-    align-items: flex-start;  /* 顶部对齐 */
+    align-items: start;  /* 图片与文字顶部对齐 */
     margin-bottom: 20px; /* 覆盖上面的 margin，增加底部留白 */
     }
 
@@ -101,12 +101,13 @@
     /* 论文配图 */
     .pub-thumb[data-astro-cid-oqb7pjrz] {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 0;
     display: block;
 
     border: none !important;            /* 👈 强制去掉图片自己的边框 */
-    object-fit: contain !important;     /* 保持图片比例 */
+    object-fit: fill !important;        /* 拉伸图片以填满区域 */
+    object-position: center top;
     background: transparent;            /* 图片本身不需要底色了 */
 
     border-radius: 2px;
@@ -164,10 +165,17 @@
     /* 徽章容器行 */
     .pub-row[data-astro-cid-oqb7pjrz] {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between; /* 左侧放会议级别，右侧放方向标签 */
     gap: 12px;
     margin-top: 10px;
+    }
+
+    .pub-row[data-astro-cid-oqb7pjrz] > div:first-child:not(.pub-links) {
+    flex-wrap: wrap;
+    min-width: 0;
+    max-width: 100%;
     }
 
     /* 会议级别徽章 (如 CCF-A) */
@@ -212,9 +220,13 @@
     /* 链接行容器 */
     .pub-links[data-astro-cid-oqb7pjrz] {
     margin-top: 8px;
+    margin-left: auto;
     font-size: 15px;
     display: flex;
+    flex: 0 0 auto; /* 空间不足时整组换行 */
+    max-width: 100%;
     flex-wrap: wrap;
+    justify-content: flex-end;
     align-items: center;
     gap: 0;
     }
@@ -299,6 +311,118 @@
         color: rgba(0, 0, 0, 0.6) !important;
     }
 
+    .education-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .education-item {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        align-items: center;
+        column-gap: 18px;
+        padding: 15px 0;
+    }
+
+    .education-item + .education-item {
+        border-top: 1px solid rgba(96, 115, 159, 0.12);
+    }
+
+    .education-logo {
+        display: block;
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        border-radius: 0;
+    }
+
+    .education-details {
+        min-width: 0;
+    }
+
+    .education-school {
+        margin: 0;
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .education-school a {
+        color: #331d71;
+    }
+
+    .education-school a:hover {
+        color: #6247b0;
+    }
+
+    .education-school a:focus-visible {
+        outline: 2px solid #6247b0;
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+
+    .education-degree {
+        margin: 4px 0 0;
+        color: var(--rh-text);
+        font-size: var(--rh-body);
+        line-height: 1.5;
+    }
+
+    .education-period {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        color: var(--rh-muted);
+        font-size: 0.82rem;
+        line-height: 1.4;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .education-status {
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: #f2eefe;
+        color: #6247b0;
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 1100px) {
+        .education-item {
+            grid-template-columns: 56px minmax(0, 1fr);
+            row-gap: 7px;
+        }
+
+        .education-logo {
+            grid-row: span 2;
+        }
+
+        .education-period {
+            grid-column: 2;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            white-space: normal;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .education-item {
+            grid-template-columns: 46px minmax(0, 1fr);
+            column-gap: 13px;
+            padding: 14px 0;
+        }
+
+        .education-logo {
+            width: 46px;
+            height: 46px;
+        }
+    }
+
     /* 3. 奖项里的灰色备注字 (比如奖金 ￥50,000) */
     .flat-main .muted {
         font-size: 0.85rem !important; /* 比正文的 0.9rem 稍微小一点点，保持层次感 */
@@ -339,7 +463,7 @@
     .pub-thumb-container[data-astro-cid-oqb7pjrz] {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: auto;
         display: block; /* 确保容器和图片一样大 */
 
         /* 🎨 魔法在这里：去掉边框，加上柔和的阴影 */
@@ -378,6 +502,22 @@
         z-index: 10;             /* 保证它浮在图片最上层 */
         box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* 加一点阴影更有立体感 */
         letter-spacing: 0.5px;
+    }
+
+    @media (min-width: 901px) {
+        /* 由右侧文字决定行高，左侧图片区域同步拉伸 */
+        .pub-thumb-container[data-astro-cid-oqb7pjrz] {
+            align-self: stretch;
+            min-height: 0;
+        }
+
+        .pub-thumb[data-astro-cid-oqb7pjrz] {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+        }
     }
 
     @media (max-width: 900px) {
@@ -428,7 +568,7 @@
 <aside class="sidebar"> 
   <section class="profile"> 
     <img src="/images/shilei.jpg" alt="Shilei Cao"> 
-    <p class="rh-p-contact"> 🧑‍🎓 2<sup>nd</sup> Year Master Student @ SYSU</p> 
+    <p class="rh-p-contact"> 🧑‍🎓 3<sup>nd</sup> Year Master Student @ SYSU</p> 
     <p class="rh-p-contact"> 📮 caoshlei@mail2.sysu.edu.cn</p>
     <div class="social-icons"> 
       <a href="mailto:caoshlei@mail2.sysu.edu.cn" target="_blank"> 
@@ -548,25 +688,42 @@ I will be joining the <a href="https://www.thuhpgc.net/" target="_blank" rel="no
 
 <hr class="custom-dashed-line">
 
-<section class="home-section"> 
-  <h2 class="rh-h2">Education</h2> 
-  <div class="flat-list"> 
-    
-    <div class="flat-row"> 
-      <span class="flat-period">2024 – 2027</span> 
-      <div class="flat-main"> 
-        <div> M.Eng. in Computer Science and Technology, <a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer"> Sun Yat-sen University </a> </div>
-      </div> 
-    </div>
-
-    <div class="flat-row"> 
-      <span class="flat-period">2020 – 2024</span> 
-      <div class="flat-main"> 
-        <div> B.Eng. in Artificial Intelligence, <a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer"> Sun Yat-sen University </a> </div>
-      </div> 
-    </div>
-
-  </div> 
+<section class="home-section education-section" aria-labelledby="education-heading">
+  <h2 class="rh-h2" id="education-heading">Education</h2>
+  <ul class="education-list">
+    <li class="education-item">
+      <img class="education-logo" src="/icons/tsinghua.svg" alt="" width="56" height="56">
+      <div class="education-details">
+        <h3 class="education-school"><a href="https://www.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">Tsinghua University</a></h3>
+        <p class="education-degree">Ph.D. in Computer Science and Technology</p>
+      </div>
+      <div class="education-period">
+        <span>2027.09 – 2031.06</span>
+        <span class="education-status">Expected</span>
+      </div>
+    </li>
+    <li class="education-item">
+      <img class="education-logo" src="/icons/sysu.png" alt="" width="56" height="56">
+      <div class="education-details">
+        <h3 class="education-school"><a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer">Sun Yat-sen University</a></h3>
+        <p class="education-degree">M.Eng. in Computer Science and Technology</p>
+      </div>
+      <div class="education-period">
+        <span>2024.09 – Present</span>
+        <!-- <span class="education-status">Expected</span> -->
+      </div>
+    </li>
+    <li class="education-item">
+      <img class="education-logo" src="/icons/sysu.png" alt="" width="56" height="56">
+      <div class="education-details">
+        <h3 class="education-school"><a href="https://www.sysu.edu.cn/" target="_blank" rel="noopener noreferrer">Sun Yat-sen University</a></h3>
+        <p class="education-degree">B.Eng. in Artificial Intelligence</p>
+      </div>
+      <div class="education-period">
+        <span>2020.09 – 2024.06</span>
+      </div>
+    </li>
+  </ul>
 </section>
 
 <hr class="custom-dashed-line">
@@ -972,6 +1129,56 @@ I will be joining the <a href="https://www.thuhpgc.net/" target="_blank" rel="no
 
     <h3 class="rh-h3" style="font-size: 18px; margin-top: 0.3rem; margin-bottom: 1rem;">Co-Author</h3>
     <ul class="pub-list" data-astro-cid-oqb7pjrz>
+
+    <li class="pub-item" data-tags="Earth Science,LLM" data-astro-cid-oqb7pjrz>
+      <div class="pub-thumb-container" data-astro-cid-oqb7pjrz>
+          <span class="thumb-badge" data-astro-cid-oqb7pjrz>KDD</span>
+          <img class="pub-thumb" src="/papers/agcd.png" alt="AGCD framework thumbnail" loading="lazy" data-astro-cid-oqb7pjrz>
+      </div>
+      <div class="pub-body" data-astro-cid-oqb7pjrz>
+        <div class="pub-title" data-astro-cid-oqb7pjrz> <strong data-astro-cid-oqb7pjrz>AGCD: Agent-Guided Cross-modal Decoding for Weather Forecasting</strong> </div>
+        <div class="pub-meta" data-astro-cid-oqb7pjrz>
+          <span class="pub-authors" data-astro-cid-oqb7pjrz> <span data-astro-cid-oqb7pjrz>Jing Wu*</span>, <span data-astro-cid-oqb7pjrz>Yang Liu*</span>, <span data-astro-cid-oqb7pjrz>Lin Zhang*</span>, <span data-astro-cid-oqb7pjrz>Junbo Zeng</span>, <span data-astro-cid-oqb7pjrz>Jiabin Wang</span>, <span data-astro-cid-oqb7pjrz>Zi Ye</span>, <span data-astro-cid-oqb7pjrz>Guowen Li</span>, <span class="author-me" data-astro-cid-oqb7pjrz>Shilei Cao</span>, <span data-astro-cid-oqb7pjrz>Jiashun Cheng</span>, <span data-astro-cid-oqb7pjrz>Hong Cheng</span>, <span data-astro-cid-oqb7pjrz>Fang Wang</span>, <span data-astro-cid-oqb7pjrz>Yerong Feng</span>, <span data-astro-cid-oqb7pjrz>Yutong Lu</span>, <span data-astro-cid-oqb7pjrz>Haohuan Fu</span>, <span data-astro-cid-oqb7pjrz>Juepeng Zheng#</span></span>
+        </div>
+        <div class="pub-meta" data-astro-cid-oqb7pjrz> <span>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</span> </div>
+
+        <div class="pub-row" data-astro-cid-oqb7pjrz>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="venue-badge" data-astro-cid-oqb7pjrz>CCF-A</span>
+            <div class="pub-tags" style="margin-top: 0;" data-astro-cid-oqb7pjrz>
+              <span class="pub-tag" data-astro-cid-oqb7pjrz>Earth Science</span>
+              <span class="pub-tag" data-astro-cid-oqb7pjrz>LLM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="pub-item" data-tags="Domain Adaptation" data-astro-cid-oqb7pjrz>
+      <div class="pub-thumb-container" data-astro-cid-oqb7pjrz>
+          <span class="thumb-badge" data-astro-cid-oqb7pjrz>TNNLS</span>
+          <img class="pub-thumb" src="/papers/fedosdg.png" alt="FedOSDG framework thumbnail" loading="lazy" data-astro-cid-oqb7pjrz>
+      </div>
+      <div class="pub-body" data-astro-cid-oqb7pjrz>
+        <div class="pub-title" data-astro-cid-oqb7pjrz> <strong data-astro-cid-oqb7pjrz>FedOSDG: Federated Open-Set Domain Generalization with Adaptive Adjustment Boundary and Weights</strong> </div>
+        <div class="pub-meta" data-astro-cid-oqb7pjrz>
+          <span class="pub-authors" data-astro-cid-oqb7pjrz> <span data-astro-cid-oqb7pjrz>Juepeng Zheng*</span>, <span data-astro-cid-oqb7pjrz>Haoyuan Liang*</span>, <span class="author-me" data-astro-cid-oqb7pjrz>Shilei Cao</span>, <span data-astro-cid-oqb7pjrz>Qingmei Li#</span>, <span data-astro-cid-oqb7pjrz>Yushan Lai</span>, <span data-astro-cid-oqb7pjrz>Guowen Li</span>, <span data-astro-cid-oqb7pjrz>Haohuan Fu</span></span>
+        </div>
+        <div class="pub-meta" data-astro-cid-oqb7pjrz> <span>IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2026</span> </div>
+
+        <div class="pub-row" data-astro-cid-oqb7pjrz>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="venue-badge" data-astro-cid-oqb7pjrz>CCF-B</span>
+            <span class="venue-badge" data-astro-cid-oqb7pjrz>JCR Q1</span> 
+            <span class="venue-badge" data-astro-cid-oqb7pjrz>IF=9.7</span> 
+            <span class="venue-badge" data-astro-cid-oqb7pjrz>中科院1区Top</span> 
+            <div class="pub-tags" style="margin-top: 0;" data-astro-cid-oqb7pjrz>
+              <span class="pub-tag" data-astro-cid-oqb7pjrz>Domain Adaptation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
 
     
     <li class="pub-item" data-tags="PEFT,LLM" data-astro-cid-oqb7pjrz> 
